@@ -83,7 +83,7 @@ async function searchWeather() {
     let searchKeyword = searchInput.value.trim();
     let resp = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=af8bcf8ff0494c0fb49163210251111&q=${searchKeyword}&days=7`, { method: "GET" });
     let wether = await resp.json();
-    // if (searchKeyword === "") return;
+    if (searchKeyword === "") return;
     Container.innerHTML = "";
     if (wether.error) {
         Container.innerHTML = `<h1>"${searchKeyword}" City Not Found❌ </h1>`;
